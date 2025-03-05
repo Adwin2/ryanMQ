@@ -1,4 +1,4 @@
-package log
+package rlog
 
 import (
 	"log"
