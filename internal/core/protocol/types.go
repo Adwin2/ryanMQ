@@ -1,11 +1,11 @@
 package protocol
 
 type Message struct {
-	msg_len   uint32
-	CRC       uint32
-	timestamp uint32
-	data_len  uint32
-	data      []byte
+	msg_len   uint32 //消息长度
+	CRC       uint32 //校验和
+	timestamp uint64 //时间戳
+	data_len  uint32 //数据长度
+	data      []byte //数据
 }
 
 type RequestHeader struct {
@@ -18,7 +18,7 @@ type RequestHeader struct {
 type ProduceRequest struct {
 	Topic     string
 	Partition int32
-	msg_cnt   uint32
+	msg_cnt   uint32    //???????????????
 	Messages  []Message //多条消息， 支持批量
 }
 
@@ -30,7 +30,7 @@ type ProduceResponse struct {
 type FetchRequest struct {
 	Topic       string
 	Partition   uint32
-	StartOffset int64  //消费起始位置
+	StartOffset uint64 //消费起始位置
 	MaxMsgNum   uint32 //最多消费(拉取)多少条
 }
 
