@@ -14,7 +14,7 @@
 
 作batch单位传输 将数据写到页缓存，操作系统异步刷盘 flush.internal.ms 控制刷盘频率
 
-：ELK日志系统
+：ELK日志系统:
 
 按时间和bytes大小删除过期segment
 **故障容错和恢复**

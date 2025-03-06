@@ -14,6 +14,10 @@ func Debug(format string, v ...any) {
 	}
 }
 
+func Warn(format string, v ...any) {
+	log.Printf("[WARN] "+format, v...)
+}
+
 func Error(format string, v ...any) {
 	log.Printf("[ERROR] "+format, v...)
 }
