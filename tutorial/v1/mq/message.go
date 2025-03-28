@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 )
 
+// 一条消息
 type Message struct {
 	ID        string
 	Topic     string

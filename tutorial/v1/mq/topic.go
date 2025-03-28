@@ -2,6 +2,7 @@ package mq
 
 import "sync"
 
+// 消息主题
 type Topic struct {
 	name      string
 	msgChan   chan *Message
@@ -69,6 +70,7 @@ func (t *Topic) RemoveConsumer(groupName string, consumerChan chan *Message) {
 				// 移除消费者channel 、错过chans[i]
 				// ... 使chans[i+1:]以每个元素的形式加到前者后
 				t.consumers[groupName] = append(chans[:i], chans[i+1:]...)
+				break
 			}
 		}
 	}
